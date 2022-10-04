@@ -32,7 +32,7 @@ class ColorFormatter(logging.Formatter):
             record.msg = record.msg  + self.color_reset 
         return logging.Formatter.format(self, record)
 
-class ColorLogger(logging.Logger):
+class ColorLogger(logging.getLoggerClass()):
     def __init__(self, name="log", console=True, logfile="", console_level=logging.WARNING, file_level=logging.DEBUG):
         # self = logging.getLogger(name)
         # self.setLevel(logging.DEBUG)        
